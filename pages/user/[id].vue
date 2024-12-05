@@ -1,17 +1,19 @@
 <template>
-  <div class="p-6">
-    <NuxtLink to="/" class="text-blue-500 underline">Volver</NuxtLink>
+  <div class="p-6 max-w-lg mx-auto bg-white rounded-lg shadow-md space-y-4">
+    <NuxtLink to="/" class="text-blue-500 hover:text-blue-700 underline">← Volver</NuxtLink>
     <div v-if="user">
-      <h1 class="text-2xl font-bold">
+      <h1 class="text-xl font-semibold text-gray-800">
         {{ user.name.first }} {{ user.name.last }}
       </h1>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Teléfono:</strong> {{ user.phone }}</p>
-      <p><strong>Ubicación:</strong> {{ user.location.city }}, {{ user.location.country }}</p>
-      <img :src="user.picture.large" alt="Foto del usuario" class="mt-4 rounded-lg" />
+      <p class="text-gray-600"><strong>Email:</strong> {{ user.email }}</p>
+      <p class="text-gray-600"><strong>Teléfono:</strong> {{ user.phone }}</p>
+      <p class="text-gray-600">
+        <strong>Ubicación:</strong> {{ user.location.city }}, {{ user.location.country }}
+      </p>
+      <img :src="user.picture.large" alt="Foto del usuario" class="mt-4 w-full rounded-lg shadow-md" />
     </div>
     <div v-else>
-      <p>No se encontró información del usuario. Por favor regresa a la lista.</p>
+      <p class="text-gray-600">No se encontró información del usuario. Por favor, regresa a la lista.</p>
     </div>
   </div>
 </template>
